@@ -25,7 +25,7 @@ export default function ConvertText() {
   }, [input]);
 
   return (
-    <div>
+    <div >
       <label>Please enter something idk</label>
       <input
         value={input}
