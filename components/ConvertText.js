@@ -1,21 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import Encoding from "encoding-japanese";
 
 export default function ConvertText() {
   const [input, setInput] = useState("");
-  const [result, setResult] = useState("");
+  const [fullResult, setFullResult] = useState("");
+  const [halfResult, setHalfResult] = useState("");
 
-  //this only works for converting from half width to full width Japanese
-  function convertToFull() {
-    setResult(input.normalize("NFKC"));
-  }
-
-  const handleToFull = () => {
-    setResult(Encoding.toZenkanaCase(input));
-  };
-  const handleToHalf = () => {
-    setResult(Encoding.toHankanaCase(input));
+  const handleConversion = () => {
+    setFullResult(Encoding.toZenkanaCase(input));
+    setHalfResult(Encoding.toHankanaCase(input));
   };
 
   //change to katakana
@@ -26,6 +20,10 @@ export default function ConvertText() {
   //     setResult(Encoding.toHiraganaCase (input));
   //   };
 
+  useEffect(() => {
+    handleConversion();
+  }, [input]);
+
   return (
     <div>
       <label>Please enter something idk</label>
@@ -35,10 +33,9 @@ export default function ConvertText() {
           setInput(e.target.value);
         }}
       />
-      <button onClick={handleToFull}>To Full Width</button>
-      <button onClick={handleToHalf}>To Half Width</button>
 
-      <p>{result}</p>
+      <p>Full: {fullResult}</p>
+      <p>Half: {halfResult}</p>
     </div>
   );
 }
