@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import styles from "../styles/Home.module.css";
+import { Input } from "@chakra-ui/react";
+import styles from "./ConvertText.module.css";
 
 import Encoding from "encoding-japanese";
 
@@ -7,10 +8,12 @@ export default function ConvertText() {
   const [input, setInput] = useState("");
   const [fullResult, setFullResult] = useState("");
   const [halfResult, setHalfResult] = useState("");
+  const [hiraResult, setHiraResult] = useState("");
 
   const handleConversion = () => {
     setFullResult(Encoding.toZenkanaCase(input));
     setHalfResult(Encoding.toHankanaCase(input));
+    setHiraResult(Encoding.toHiraganaCase(input));
   };
 
   //change to katakana
@@ -27,16 +30,22 @@ export default function ConvertText() {
 
   return (
     <div className={styles.container}>
-      <label>Please enter something idk</label>
-      <input
+      <label>Convert to Japanese</label>
+      <Input
+        width="auto"
         value={input}
         onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-
-      <p>Full: {fullResult}</p>
-      <p>Half: {halfResult}</p>
+      <div className={styles.convertContainer}>
+        Full:
+        <p>{fullResult}</p>
+        Half:
+        <p>{halfResult}</p>
+        Hira:
+        <p>{hiraResult}</p>
+      </div>
     </div>
   );
 }
