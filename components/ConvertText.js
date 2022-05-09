@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import styles from "../styles/Home.module.css";
 
 import Encoding from "encoding-japanese";
 
@@ -25,7 +26,7 @@ export default function ConvertText() {
   }, [input]);
 
   return (
-    <div >
+    <div className={styles.container}>
       <label>Please enter something idk</label>
       <input
         value={input}
