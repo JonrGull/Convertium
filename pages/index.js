@@ -15,3 +15,5 @@ export default function Home() {
     </div>
   );
 }
+
+//practice routes? So one page has japanese and another has english width conversion. Just for fun

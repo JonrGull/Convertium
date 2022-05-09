@@ -1,33 +1,47 @@
 import React, { useState } from "react";
-import * as StrUtil from "str-util";
-import { ZH2JP } from "str-util";
+
+import Encoding from "encoding-japanese";
 
 export default function ConvertText() {
   const [input, setInput] = useState("");
   const [result, setResult] = useState("");
-  console.log("~ input", input);
-  console.log("~ result", result);
 
-  const handleToFullWidth = () => {
-    setResult(StrUtil.toFullWidth(input));
+  //this only works for converting from half width to full width Japanese
+  function convertToFull() {
+    setResult(input.normalize("NFKC"));
+  }
+
+  const handleToFull = () => {
+    setResult(Encoding.toZenkanaCase(input));
+  };
+  const handleToHalf = () => {
+    setResult(Encoding.toHankanaCase(input));
   };
 
-  const handleToHalfWidth = () => {
-    setResult(StrUtil.toHalfWidth(input));
-  };
+  //change to katakana
+  //   const handleToKatakana = () => {
+  //     setResult(Encoding.toKatakanaCase(input));
+  //   };
+  //   const handleToHiragana = () => {
+  //     setResult(Encoding.toHiraganaCase (input));
+  //   };
 
   return (
     <div>
-      <label>Enter here or whatever</label>
+      <label>Please enter something idk</label>
       <input
         value={input}
         onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-      <button onClick={handleToFullWidth}>To Full Width</button>
-      <button onClick={handleToHalfWidth}>To Half Width</button>
+      <button onClick={handleToFull}>To Full Width</button>
+      <button onClick={handleToHalf}>To Half Width</button>
+
       <p>{result}</p>
     </div>
   );
 }
+
+// ｶﾀｶﾅ
+// カタカナ
