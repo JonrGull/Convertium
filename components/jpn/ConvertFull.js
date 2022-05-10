@@ -22,7 +22,6 @@ export default function ConvertFull({ input }) {
 
   return (
     <>
-      Full-width Katakana
       <Input value={fullResult} isReadOnly fontSize="2xl" />
       <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}

@@ -6,6 +6,11 @@ export default function SendData({ input }) {
   const [sentData, setSentData] = useState(false);
 
   const handleData = () => {
+    if (input === null || input.trim() === "") {
+      alert("Please enter something");
+      return;
+    }
+
     try {
       setSentData(true);
       fetch("api/data", {
@@ -25,14 +30,15 @@ export default function SendData({ input }) {
     }
   };
 
-  console.log(sentData);
   return (
     <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}>
       <Stack spacing={{ base: "4", md: "5" }}>
-        <Text>
-          Is this app useful? Please click this button to send your entry so it
-          may be used for data science purposes.
-        </Text>
+        <Container bg="teal" color="white" borderRadius="lg">
+          <Text fontSize="xl">
+            Is this app useful? Please click this button to send your entry so
+            it may be used for data science purposes.
+          </Text>
+        </Container>
 
         {sentData ? (
           <Button

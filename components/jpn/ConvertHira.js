@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useClipboard, Button, Input } from "@chakra-ui/react";
+import { useClipboard, Button, Input, Text } from "@chakra-ui/react";
 import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
@@ -22,8 +22,7 @@ export default function ConvertHira({ input }) {
 
   return (
     <>
-      Hiragana
-      <Input value={hiraResult} isReadOnly fontSize="3xl" />
+      <Input ml={4} value={hiraResult} isReadOnly fontSize="3xl" />
       <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>

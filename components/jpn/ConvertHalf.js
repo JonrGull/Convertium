@@ -23,7 +23,6 @@ export default function ConvertHalf({ input }) {
 
   return (
     <>
-      Half-Width Katakana
       <Input value={halfResult} isReadOnly fontSize="2xl" />
       <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
