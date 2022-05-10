@@ -1,13 +1,5 @@
 import React, { useState } from "react";
-import {
-  Input,
-  Container,
-  Text,
-  SimpleGrid,
-  Box,
-  useClipboard,
-  Button,
-} from "@chakra-ui/react";
+import { Input, Flex } from "@chakra-ui/react";
 import styles from "./Convert.module.css";
 
 import ConvertHira from "./jpn/ConvertHira";
@@ -27,19 +19,20 @@ export default function Convert() {
 
   return (
     <div className={styles.container}>
-      <label>Convert to Japanese</label>
+      <Flex>Enter your word in Full/Half width Katakana</Flex>
       <Input
+        mb="50"
         width="auto"
         value={input}
         onChange={(e) => {
           setInput(e.target.value);
         }}
       />
-      <SimpleGrid columns={1} spacingX="40px" spacingY="20px">
+      <Flex>
         <ConvertHira input={input} />
         <ConvertFull input={input} />
         <ConvertHalf input={input} />
-      </SimpleGrid>
+      </Flex>
     </div>
   );
 }

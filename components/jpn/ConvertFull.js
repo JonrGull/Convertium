@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Box, useClipboard, Button } from "@chakra-ui/react";
+import { useClipboard, Button, Input } from "@chakra-ui/react";
 import Encoding from "encoding-japanese";
 
 export default function ConvertFull({ input }) {
@@ -12,11 +12,12 @@ export default function ConvertFull({ input }) {
   const { hasCopied, onCopy } = useClipboard(fullResult);
 
   return (
-    <Box fontSize="2xl">
-      Full: {fullResult}
-      <Button onClick={onCopy} ml={2}>
+    <>
+    Full-width Katakana 
+      <Input value={fullResult} isReadOnly fontSize="2xl" />
+      <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>
-    </Box>
+    </>
   );
 }
