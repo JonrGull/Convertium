@@ -33,7 +33,7 @@ export default function SendData({ input }) {
   return (
     <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}>
       <Stack spacing={{ base: "4", md: "5" }}>
-        <Container bg="teal" color="white" borderRadius="lg">
+        <Container bg="#42C2FF" color="white" borderRadius="lg">
           <Text fontSize="xl">
             Is this app useful? Please click this button to send your entry so
             it may be used for data science purposes.
