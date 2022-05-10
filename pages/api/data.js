@@ -5,13 +5,18 @@ export default async (req, res) => {
 
   switch (req.method) {
     case "GET":
-      const userEntries = await db
-        .collection("ConvertiumData")
-        .find({})
-        .limit(20)
-        .toArray();
+      try {
+        const userEntries = await db
+          .collection("ConvertiumData")
+          .find({})
+          .limit(20)
+          .toArray();
 
-      res.json(userEntries);
+        res.json(userEntries);
+      } catch (error) {
+        res.status(500).json({ error });
+      }
+
       break;
 
     case "POST":

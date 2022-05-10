@@ -23,7 +23,7 @@ export default function ConvertHira({ input }) {
   return (
     <>
       Hiragana
-      <Input value={hiraResult} isReadOnly fontSize="2xl" />
+      <Input value={hiraResult} isReadOnly fontSize="3xl" />
       <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>

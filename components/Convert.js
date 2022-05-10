@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Input, Flex } from "@chakra-ui/react";
-import styles from "./Convert.module.css";
+import { Input, Flex, Center } from "@chakra-ui/react";
 
 import ConvertHira from "./jpn/ConvertHira";
 import ConvertFull from "./jpn/ConvertFull";
@@ -11,19 +10,21 @@ export default function Convert() {
   const [input, setInput] = useState("");
 
   return (
-    <div className={styles.container}>
-      <Flex>Enter English or Japanese</Flex>
-      <Input
-        size="lg"
-        mb={50}
-        fontSize="1.5em"
-        p={3}
-        width="auto"
-        value={input}
-        onChange={(e) => {
-          setInput(e.target.value);
-        }}
-      />
+    <div>
+      <Center mt={20}>Enter English or Japanese</Center>
+      <Center>
+        <Input
+          size="lg"
+          mb={50}
+          fontSize="1.5em"
+          p={3}
+          width="auto"
+          value={input}
+          onChange={(e) => {
+            setInput(e.target.value);
+          }}
+        />
+      </Center>
       <Flex>
         <ConvertHira input={input} />
         <ConvertFull input={input} />
