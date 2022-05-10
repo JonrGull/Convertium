@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 import { Container, Button, Stack, Text } from "@chakra-ui/react";
 
-export default function SendData({ input }) {
+export default function SendData({ input, setInput }) {
   const [sentData, setSentData] = useState(false);
 
   const handleData = () => {
@@ -24,6 +24,7 @@ export default function SendData({ input }) {
       });
       setTimeout(() => {
         setSentData(false);
+        setInput("");
       }, 1500);
     } catch (error) {
       console.log(error);

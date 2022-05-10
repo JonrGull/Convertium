@@ -11,7 +11,7 @@ export default function Convert() {
 
   return (
     <>
-      <Center mt={20}>Enter English or Japanese</Center>
+      <Center mt={20}>Enter Romaji or Japanese</Center>
       <Center>
         <Input
           size="lg"
@@ -37,7 +37,7 @@ export default function Convert() {
         <ConvertFull input={input} />
         <ConvertHalf input={input} />
       </Flex>
-      <SendData input={input} />
+      <SendData input={input} setInput={setInput} />
     </>
   );
 }
