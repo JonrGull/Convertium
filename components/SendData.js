@@ -5,7 +5,7 @@ import { Container, Button, Stack, Text } from "@chakra-ui/react";
 export default function SendData({ input }) {
   const handleData = () => {
     try {
-      fetch("http://localhost:3000/api/data", {
+      fetch("api/data", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
