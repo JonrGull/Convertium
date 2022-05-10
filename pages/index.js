@@ -1,6 +1,5 @@
 import Head from "next/head";
 import Convert from "../components/Convert";
-import Nav from "../components/Nav";
 
 export default function App() {
   return (

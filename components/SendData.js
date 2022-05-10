@@ -39,7 +39,6 @@ export default function SendData({ input }) {
             it may be used for data science purposes.
           </Text>
         </Container>
-
         {sentData ? (
           <Button
             variantColor="green"
