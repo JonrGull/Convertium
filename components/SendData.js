@@ -4,17 +4,19 @@ import { Container, Button, Stack, Text } from "@chakra-ui/react";
 
 export default function SendData({ input }) {
   const handleData = () => {
-    fetch("http://localhost:3000/api/data", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        input: input,
-      }),
-    }).then((res) => {
-      console.log(res);
-    });
+    try {
+      fetch("http://localhost:3000/api/data", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          input: input,
+        }),
+      }).then((res) => {
+        console.log(res);
+      });
+    } catch (error) {}
   };
 
   return (
