@@ -4,7 +4,7 @@ export default async (req, res) => {
   const { db } = await connectToDatabase();
   // console.log(req.method);
 
-  //switch case for get and post
+
   switch (req.method) {
     case "GET":
       
