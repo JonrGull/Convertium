@@ -1,10 +1,9 @@
 import Head from "next/head";
 import Convert from "../components/Convert";
-import SendData from "../components/SendData";
 
 import { Heading } from "@chakra-ui/react";
 
-export default function Home() {
+export default function App() {
   return (
     <div>
       <Head>
@@ -14,7 +13,6 @@ export default function Home() {
       </Head>
       <Heading>Convertium</Heading>
       <Convert />
-      <SendData />
     </div>
   );
 }
