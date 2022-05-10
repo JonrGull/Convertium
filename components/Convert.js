@@ -29,7 +29,7 @@ export default function Convert() {
         <ConvertFull input={input} />
         <ConvertHalf input={input} />
       </Flex>
-      <SendData />
+      <SendData input={input} />
     </div>
   );
 }
