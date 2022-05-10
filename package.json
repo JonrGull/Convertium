@@ -9,6 +9,7 @@
     "@chakra-ui/react": "^1.8.8",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
+    "@koozaki/romaji-conv": "^2.0.17",
     "encoding-japanese": "^2.0.0",
     "framer-motion": "^6.3.3",
     "mongodb": "^4.1.3",

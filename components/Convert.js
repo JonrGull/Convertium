@@ -9,17 +9,9 @@ import ConvertHalf from "./jpn/ConvertHalf";
 export default function Convert() {
   const [input, setInput] = useState("");
 
-  //change to katakana
-  //   const handleToKatakana = () => {
-  //     setResult(Encoding.toKatakanaCase(input));
-  //   };
-  //   const handleToHiragana = () => {
-  //     setResult(Encoding.toHiraganaCase (input));
-  //   };
-
   return (
     <div className={styles.container}>
-      <Flex>Enter your word in Full/Half width Katakana</Flex>
+      <Flex>Enter English or Japanese</Flex>
       <Input
         mb="50"
         width="auto"
