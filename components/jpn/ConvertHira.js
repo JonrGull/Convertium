@@ -6,14 +6,15 @@ export default function ConvertHira({ input }) {
   const [hiraResult, setHiraResult] = useState("");
 
   useEffect(() => {
-    setHiraResult(Encoding.toHiraganaCase(input));
+    const zenToHira = Encoding.toZenkanaCase(input);
+    setHiraResult(Encoding.toHiraganaCase(zenToHira));
   }, [input]);
 
   const { hasCopied, onCopy } = useClipboard(hiraResult);
 
   return (
     <>
-      Hiragana 
+      Hiragana
       <Input value={hiraResult} isReadOnly fontSize="2xl" />
       <Button mr={5} onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
