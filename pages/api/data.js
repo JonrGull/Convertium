@@ -22,7 +22,9 @@ export default async (req, res) => {
         });
 
         res.json(userEntry);
-      } catch (error) {}
+      } catch (error) {
+        res.status(500).json({ error });
+      }
 
       break;
   }

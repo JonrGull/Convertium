@@ -13,10 +13,10 @@ export default function SendData({ input }) {
         body: JSON.stringify({
           input: input,
         }),
-      }).then((res) => {
-        console.log(res);
       });
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
