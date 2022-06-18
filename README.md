@@ -4,11 +4,7 @@ Convertium is a small app that helps you change your foreign name to Japanese Hi
 
 ### Set up environment variables
 
-Copy the `env.local.example` file in this directory to `.env.local` (which will be ignored by Git):
-
-```bash
-.env.local.example .env.local
-```
+Create a `.env` file in the root of the project.
 
 Set each variable on `.env.local`:
 
