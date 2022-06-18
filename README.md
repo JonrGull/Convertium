@@ -6,7 +6,7 @@ Convertium is a small app that helps you change your foreign name to Japanese Hi
 
 Create a `.env` file in the root of the project.
 
-Set each variable on `.env.local`:
+Set each variable on `.env`:
 
 - `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
 - `MONGO_DB` - The name of the Database you want to connect to.
