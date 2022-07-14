@@ -20,9 +20,7 @@ export default function Convert() {
           p={3}
           width="auto"
           value={input}
-          onChange={(e) => {
-            setInput(e.target.value);
-          }}
+          onChange={(e) => setInput(e.target.value)}
         />
       </Center>
       <Flex justifyContent="space-around">

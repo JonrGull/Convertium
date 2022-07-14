@@ -36,13 +36,13 @@ export default function SendData({ input, setInput }) {
       <Stack spacing={{ base: "4", md: "5" }}>
         <Container bg="#42C2FF" color="white" borderRadius="lg">
           <Text fontSize="xl">
-            Like this app? Please click submit to send your entry so it may
-            be used for data science purposes.
+            Like this app? Please click submit to send your entry so it may be
+            used for data science purposes.
           </Text>
         </Container>
         {sentData ? (
           <Button
-            variantColor="green"
+            variantcolor="green"
             variant="outline"
             isLoading
             loadingText="Submitting"
