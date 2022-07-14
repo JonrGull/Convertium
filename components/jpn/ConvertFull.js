@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useClipboard, Button, Input } from "@chakra-ui/react";
+import { useClipboard, Button, Input, Flex, FormLabel } from "@chakra-ui/react";
+
 import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
@@ -21,11 +22,14 @@ export default function ConvertFull({ input }) {
   }, [input]);
 
   return (
-    <>
+    <Flex>
+      <FormLabel htmlFor="Full-width" fontSize="2xl">
+        Full-width
+      </FormLabel>
       <Input value={fullResult} isReadOnly fontSize="2xl" />
-      <Button mr={5} onClick={onCopy} ml={2}>
+      <Button onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>
-    </>
+    </Flex>
   );
 }

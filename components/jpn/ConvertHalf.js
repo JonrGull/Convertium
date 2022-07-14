@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { useClipboard, Button, Input } from "@chakra-ui/react";
+import { useClipboard, Button, Input, Flex, FormLabel } from "@chakra-ui/react";
+
 import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
@@ -22,11 +23,14 @@ export default function ConvertHalf({ input }) {
   }, [input]);
 
   return (
-    <>
+    <Flex>
+      <FormLabel htmlFor="Half-width" fontSize="2xl">
+        Half-width
+      </FormLabel>
       <Input value={halfResult} isReadOnly fontSize="2xl" />
-      <Button mr={5} onClick={onCopy} ml={2}>
+      <Button onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>
-    </>
+    </Flex>
   );
 }
