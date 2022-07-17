@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useClipboard, Button, Input, Flex, FormLabel } from "@chakra-ui/react";
-import Encoding from "encoding-japanese";
 
+import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
 export default function ConvertHira({ input }) {
-  const [hiraResult, setHiraResult] = useState("");
+  const [hiraResult, setHiraResult] = useState<string>("");
   const { hasCopied, onCopy } = useClipboard(hiraResult);
 
   const handleHiragana = () => {

@@ -5,7 +5,7 @@ import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
 export default function ConvertFull({ input }) {
-  const [fullResult, setFullResult] = useState("");
+  const [fullResult, setFullResult] = useState<string>("");
   const { hasCopied, onCopy } = useClipboard(fullResult);
 
   const handleFullKatakana = () => {

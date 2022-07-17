@@ -5,7 +5,7 @@ import Encoding from "encoding-japanese";
 import romajiConv from "@koozaki/romaji-conv";
 
 export default function ConvertHalf({ input }) {
-  const [halfResult, setHalfResult] = useState("");
+  const [halfResult, setHalfResult] = useState<string>("");
   const { hasCopied, onCopy } = useClipboard(halfResult);
 
   const handleHalfKatakana = () => {
