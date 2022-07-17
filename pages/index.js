@@ -5,11 +5,11 @@ import {
   Flex,
   Center,
   Button,
-  Container,
-  Stack,
-  Text,
+  Box,
 } from "@chakra-ui/react";
 import { useForm } from "react-hook-form";
+
+import Footer from "../components/Footer";
 
 import ConvertHira from "../components/jpn/ConvertHira";
 import ConvertFull from "../components/jpn/ConvertFull";
@@ -51,46 +51,41 @@ export default function App() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <FormControl isInvalid={errors.entry}>
-        <Center mt={20}>
-          <Input
-            {...register("entry", {
-              required: "This is required",
-            })}
-            placeholder="Enter Romaji or Japanese"
-            size="lg"
-            mb={50}
-            fontSize="1.5em"
-            width="auto"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </Center>
+        <Box>
+          <Center mt={20}>
+            <Input
+              {...register("entry", {
+                required: "This is required",
+              })}
+              placeholder="Enter Romaji or Japanese"
+              size="lg"
+              mb={50}
+              fontSize="1.5em"
+              width="auto"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+          </Center>
+        </Box>
       </FormControl>
+      <Box boxShadow="lg" p="6" rounded="md" bg="white">
+        <Flex justifyContent="space-around">
+          <ConvertHira input={input} />
+          <ConvertFull input={input} />
+          <ConvertHalf input={input} />
+        </Flex>
+      </Box>
 
-      <Flex justifyContent="space-around">
-        <ConvertHira input={input} />
-        <ConvertFull input={input} />
-        <ConvertHalf input={input} />
-      </Flex>
-      <Container as="footer" role="contentinfo" py={{ base: "12", md: "16" }}>
-        <Stack spacing={{ base: "4", md: "5" }}>
-          <Container bg="#42C2FF" color="white" borderRadius="lg">
-            <Text fontSize="xl">
-              Like this app? Please click submit to send your entry so it may be
-              used for data science purposes.
-            </Text>
-          </Container>
-
-          <Button
-            colorScheme="teal"
-            variant="outline"
-            isLoading={isLoading}
-            type="submit"
-          >
-            Submit
-          </Button>
-        </Stack>
-      </Container>
+      <Footer />
+      <Button
+        colorScheme="teal"
+        variant="outline"
+        isLoading={isLoading}
+        type="submit"
+      >
+        Submit
+      </Button>
     </form>
   );
 }
+

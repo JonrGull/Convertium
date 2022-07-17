@@ -7,7 +7,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 
-const Links = ["Japanese", "English"];
+const Links = ["Japanese"];
 
 const NavLink = ({ children }) => (
   <Link
