@@ -26,7 +26,7 @@ export default function ConvertHira({ input }) {
       <FormLabel htmlFor="Hiragana" fontSize="2xl">
         Hiragana
       </FormLabel>
-      <Input value={hiraResult} isReadOnly fontSize="2xl" />
+      <Input value={hiraResult} isReadOnly fontSize="2xl" ml={6} />
       <Button onClick={onCopy} ml={2}>
         {hasCopied ? "Copied" : "Copy"}
       </Button>

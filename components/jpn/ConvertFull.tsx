@@ -23,7 +23,7 @@ export default function ConvertFull({ input }) {
 
   return (
     <Flex>
-      <FormLabel htmlFor="Full-width" fontSize="2xl">
+      <FormLabel w="200px" htmlFor="Full-width" fontSize="2xl">
         Full-width
       </FormLabel>
       <Input value={fullResult} isReadOnly fontSize="2xl" />

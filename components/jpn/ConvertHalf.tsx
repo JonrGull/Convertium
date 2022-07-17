@@ -24,7 +24,7 @@ export default function ConvertHalf({ input }) {
 
   return (
     <Flex>
-      <FormLabel htmlFor="Half-width" fontSize="2xl">
+      <FormLabel w="200px" htmlFor="Half-width" fontSize="2xl">
         Half-width
       </FormLabel>
       <Input value={halfResult} isReadOnly fontSize="2xl" />

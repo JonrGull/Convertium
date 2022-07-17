@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Input, Flex, Center, Box, Container } from "@chakra-ui/react";
+import { Input, Flex, Center, Box, Container, Stack } from "@chakra-ui/react";
 
 import Footer from "../components/Footer";
 
@@ -11,7 +11,7 @@ export default function App() {
   const [input, setInput] = useState("");
 
   return (
-    <Container>
+    <Container maxW="650px">
       <Box>
         <Center mt={20}>
           <Input
@@ -26,12 +26,12 @@ export default function App() {
         </Center>
       </Box>
 
-      <Box boxShadow="lg" p="6" rounded="md" bg="white">
-        <Flex justifyContent="space-around">
+      <Box boxShadow="lg" p="10" rounded="md" bg="white">
+        <Stack direction={["column"]} spacing="24px">
           <ConvertHira input={input} />
           <ConvertFull input={input} />
           <ConvertHalf input={input} />
-        </Flex>
+        </Stack>
       </Box>
       <Footer />
     </Container>

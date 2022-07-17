@@ -1,15 +1,23 @@
 # About
 
-Convertium is a small app that helps you change your foreign name to Japanese Hiragana, full-width Katakana, and half-width katakana. Very useful when signing up for Japanese services where the website is very peculiar about the formatting.
+### Convertium (WIP) is a small app that helps you change your foreign name to Japanese Hiragana, full-width Katakana, and half-width katakana. Very useful when signing up for Japanese services where the website is very peculiar about the formatting.
 
-### Set up environment variables
+### Features
 
-Create a `.env` file in the root of the project.
+- Convert your foreign name to Japanese Hiragana, Katakana, and half-width katakana.
+- Convert any Hiragana, Katakana, or half-width Katakana word to other styles.
 
-Set each variable on `.env`:
+### Usage
 
-- `MONGODB_URI` - Your MongoDB connection string. If you are using [MongoDB Atlas](https://mongodb.com/atlas) you can find this by clicking the "Connect" button for your cluster.
-- `MONGO_DB` - The name of the Database you want to connect to.
+- Type in your word in the input box and hit the copy button to copy it to the clipboard.
+
+### Tech Stack
+
+- Next.js
+- TypeScript
+- Chakra UI
+- romaji-conv (https://www.npmjs.com/package/@koozaki/romaji-conv)
+- encoding-japanese (https://www.npmjs.com/package/encoding-japanese)
 
 ### Run Next.js in development mode
 
