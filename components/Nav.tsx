@@ -27,7 +27,7 @@ const NavLink = ({ children }) => (
 export default function Nav() {
   return (
     <>
-      <Box bg={useColorModeValue("blue.100")} px={4}>
+      <Box bg={"blue.100"} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
           <HStack spacing={8} alignItems={"center"}>
             <Heading size="xl">CONVERTIUM</Heading>
