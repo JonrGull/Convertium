@@ -2,6 +2,8 @@
 
 ### Convertium (WIP) is a small app that helps you change your foreign name to Japanese Hiragana, full-width Katakana, and half-width katakana. Very useful when signing up for Japanese services where the website is very peculiar about the formatting.
 
+![Gif of demonstrating the app](/public/Sample.gif)
+
 ### Features
 
 - Convert your foreign name to Japanese Hiragana, Katakana, and half-width katakana.
