@@ -1,26 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { useClipboard, Button, Input, Flex, FormLabel } from "@chakra-ui/react";
-
-import Encoding from "encoding-japanese";
+import { Button, Flex, FormLabel, Input, useClipboard } from "@chakra-ui/react";
 import romajiConv from "@koozaki/romaji-conv";
+import Encoding from "encoding-japanese";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 
-export default function ConvertHalf({ input }) {
+const ConvertHalf = forwardRef((_props, ref) => {
   const [halfResult, setHalfResult] = useState<string>("");
   const { hasCopied, onCopy } = useClipboard(halfResult);
 
-  const handleHalfKatakana = () => {
-    if (input.match(/[a-zA-Z]/)) {
-      const engToFull = romajiConv.toKatakana(input);
-      setHalfResult(Encoding.toHankanaCase(engToFull));
-    } else {
-      const fullToHalf = Encoding.toKatakanaCase(input);
-      setHalfResult(Encoding.toHankanaCase(fullToHalf));
-    }
-  };
-
-  useEffect(() => {
-    handleHalfKatakana();
-  }, [input]);
+  useImperativeHandle(ref, () => ({
+    handleHalfKatakana: (input: string) => {
+      if (input.match(/[a-zA-Z]/)) {
+        const engToFull = romajiConv.toKatakana(input);
+        setHalfResult(Encoding.toHankanaCase(engToFull));
+      } else {
+        const fullToHalf = Encoding.toKatakanaCase(input);
+        setHalfResult(Encoding.toHankanaCase(fullToHalf));
+      }
+    },
+  }));
 
   return (
     <Flex>
@@ -33,4 +30,6 @@ export default function ConvertHalf({ input }) {
       </Button>
     </Flex>
   );
-}
+});
+
+export default ConvertHalf;

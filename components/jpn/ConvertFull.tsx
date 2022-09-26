@@ -1,25 +1,22 @@
-import React, { useState, useEffect } from "react";
-import { useClipboard, Button, Input, Flex, FormLabel } from "@chakra-ui/react";
+import { Button, Flex, FormLabel, Input, useClipboard } from '@chakra-ui/react';
+import romajiConv from '@koozaki/romaji-conv';
+import Encoding from 'encoding-japanese';
+import React, { forwardRef, useImperativeHandle, useState } from 'react';
 
-import Encoding from "encoding-japanese";
-import romajiConv from "@koozaki/romaji-conv";
-
-export default function ConvertFull({ input }) {
+const ConvertFull = forwardRef((_props, ref) => {
   const [fullResult, setFullResult] = useState<string>("");
   const { hasCopied, onCopy } = useClipboard(fullResult);
 
-  const handleFullKatakana = () => {
-    if (input.match(/[a-zA-Z]/)) {
-      setFullResult(romajiConv.toKatakana(input));
-    } else {
-      const zenToFull = Encoding.toZenkanaCase(input);
-      setFullResult(Encoding.toKatakanaCase(zenToFull));
-    }
-  };
-
-  useEffect(() => {
-    handleFullKatakana();
-  }, [input]);
+  useImperativeHandle(ref, () => ({
+    handleFullKatakana: (input: string) => {
+      if (input.match(/[a-zA-Z]/)) {
+        setFullResult(romajiConv.toKatakana(input));
+      } else {
+        const zenToFull = Encoding.toZenkanaCase(input);
+        setFullResult(Encoding.toKatakanaCase(zenToFull));
+      }
+    },
+  }));
 
   return (
     <Flex>
@@ -32,4 +29,6 @@ export default function ConvertFull({ input }) {
       </Button>
     </Flex>
   );
-}
+});
+
+export default ConvertFull;
