@@ -1,10 +1,10 @@
-import { Button, Flex, FormLabel, Input, useClipboard } from '@chakra-ui/react';
-import romajiConv from '@koozaki/romaji-conv';
-import Encoding from 'encoding-japanese';
-import React, { forwardRef, useImperativeHandle, useState } from 'react';
+import { Button, Flex, FormLabel, Input, useClipboard } from "@chakra-ui/react";
+import romajiConv from "@koozaki/romaji-conv";
+import Encoding from "encoding-japanese";
+import React, { forwardRef, useImperativeHandle, useState } from "react";
 
 const ConvertFull = forwardRef((_props, ref) => {
-  const [fullResult, setFullResult] = useState<string>("");
+  const [fullResult, setFullResult] = useState("");
   const { hasCopied, onCopy } = useClipboard(fullResult);
 
   useImperativeHandle(ref, () => ({

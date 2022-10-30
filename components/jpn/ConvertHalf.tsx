@@ -4,7 +4,7 @@ import Encoding from "encoding-japanese";
 import React, { forwardRef, useImperativeHandle, useState } from "react";
 
 const ConvertHalf = forwardRef((_props, ref) => {
-  const [halfResult, setHalfResult] = useState<string>("");
+  const [halfResult, setHalfResult] = useState("");
   const { hasCopied, onCopy } = useClipboard(halfResult);
 
   useImperativeHandle(ref, () => ({

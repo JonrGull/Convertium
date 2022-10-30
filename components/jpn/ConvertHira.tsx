@@ -4,7 +4,7 @@ import Encoding from 'encoding-japanese';
 import { forwardRef, useImperativeHandle, useState } from 'react';
 
 const ConvertHira = forwardRef((_props, ref) => {
-  const [hiraResult, setHiraResult] = useState<string>("");
+  const [hiraResult, setHiraResult] = useState("");
   const { hasCopied, onCopy } = useClipboard(hiraResult);
 
   useImperativeHandle(ref, () => ({
