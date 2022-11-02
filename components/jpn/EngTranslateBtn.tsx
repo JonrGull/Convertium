@@ -6,10 +6,14 @@ import {
   IconButton,
   Popover,
   PopoverContent,
-  PopoverTrigger,
   Text,
   useDisclosure,
 } from "@chakra-ui/react";
+
+export const PopoverTrigger: React.FC<{ children: React.ReactNode }> =
+  OrigPopoverTrigger;
+
+import { PopoverTrigger as OrigPopoverTrigger } from "@chakra-ui/react";
 import axios from "axios";
 import { Dispatch, SetStateAction, useState } from "react";
 

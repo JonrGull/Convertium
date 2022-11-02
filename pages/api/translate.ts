@@ -4,7 +4,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const translationClient = new TranslationServiceClient();
 
-  const projectId = process.env.GOOGLE_PROJECT_ID;
+  const projectId = "convertium-367307";
   const location = "global";
 
   async function translateText() {
