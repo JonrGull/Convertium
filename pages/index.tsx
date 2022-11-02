@@ -1,17 +1,21 @@
 import { Box, Center, Container, Input, Stack } from "@chakra-ui/react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import ConvertFull from "../components/jpn/ConvertFull";
 import ConvertHalf from "../components/jpn/ConvertHalf";
 import ConvertHira from "../components/jpn/ConvertHira";
+import EngTranslateBtn from "../components/jpn/EngTranslateBtn";
 
 export default function App() {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const [input, setInput] = useState("");
+
+  // const inputRef = useRef<HTMLInputElement>(null);
   const hiraRef = useRef(null);
   const fullRef = useRef(null);
   const halfRef = useRef(null);
 
-  const onChange = (e: { target: { value: any } }) => {
+  const changeToKana = (e: { target: { value: string } }) => {
+    setInput(e.target.value);
     hiraRef.current.handleHiragana(e.target.value);
     fullRef.current.handleFullKatakana(e.target.value);
     halfRef.current.handleHalfKatakana(e.target.value);
@@ -24,11 +28,18 @@ export default function App() {
           <Input
             placeholder="Enter Romaji or Japanese"
             size="lg"
-            mb={50}
             fontSize="2xl"
             width="auto"
-            ref={inputRef}
-            onChange={onChange}
+            // ref={inputRef}
+            value={input}
+            onChange={changeToKana}
+          />
+        </Center>
+        <Center>
+          <EngTranslateBtn
+            input={input}
+            setInput={setInput}
+            changeToKana={changeToKana}
           />
         </Center>
       </Box>
