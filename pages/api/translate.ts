@@ -2,7 +2,13 @@ import { TranslationServiceClient } from "@google-cloud/translate";
 import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const translationClient = new TranslationServiceClient();
+  const credentials = JSON.parse(
+    Buffer.from(process.env.GOOGLE_APPLICATION_CREDENTIALS, "base64").toString()
+  );
+
+  const translationClient = new TranslationServiceClient({
+    credentials,
+  });
 
   const projectId = "convertium-367307";
   const location = "global";

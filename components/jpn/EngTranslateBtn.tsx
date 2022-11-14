@@ -37,6 +37,7 @@ export default function EngTranslateBtn({
       const result = await axios.post("/api/translate", {
         text: input,
       });
+
       setInput(result.data);
       changeToKana({ target: { value: result.data } });
       setIsLoading(false);
