@@ -78,8 +78,8 @@ export default function EngTranslateBtn({
           </PopoverTrigger>
           <PopoverContent p={5}>
             <Text>
-              If you want to type in English, click the button first to
-              translate to Japanese. However, it may not be accurate!
+              If you want to type in English, click the button to translate to
+              Japanese. Try to stick to foreign words or names.
             </Text>
           </PopoverContent>
         </Popover>
