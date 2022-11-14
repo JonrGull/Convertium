@@ -8,6 +8,7 @@
 
 - Convert your foreign name to Japanese Hiragana, Katakana, and half-width katakana.
 - Convert any Hiragana, Katakana, or half-width Katakana word to other styles.
+- Don't know any Japanese? No problem! You can paste in any English word and it will be converted to Japanese after hitting the button.
 
 ### Usage
 
@@ -18,19 +19,18 @@
 - Next.js
 - TypeScript
 - Chakra UI
-- romaji-conv (https://www.npmjs.com/package/@koozaki/romaji-conv)
-- encoding-japanese (https://www.npmjs.com/package/encoding-japanese)
+- [Google CLoud Translate API](https://cloud.google.com/translate)
+- [romaji-conv](https://www.npmjs.com/package/@koozaki/romaji-conv)
+- [encoding-japanese](https://www.npmjs.com/package/encoding-japanese)
 
 ### Run Next.js in development mode
 
-```bash
-npm install
-npm run dev
+```pnpm
+pnpm install && pnpm dev
 
-# or
+npm install && npm run dev
 
-yarn install
-yarn dev
+yarn install && yarn dev
 ```
 
 Your app should be up and running on [http://localhost:3000](http://localhost:3000)! If it doesn't work, post on [GitHub discussions](https://github.com/vercel/next.js/discussions).
