@@ -1,5 +1,5 @@
 import { Box, Center, Container, Input, Stack } from "@chakra-ui/react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 import ConvertFull from "../components/jpn/ConvertFull";
 import ConvertHalf from "../components/jpn/ConvertHalf";
@@ -9,7 +9,7 @@ import EngTranslateBtn from "../components/jpn/EngTranslateBtn";
 export default function App() {
   const [input, setInput] = useState("");
 
-  // const inputRef = useRef<HTMLInputElement>(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   const hiraRef = useRef(null);
   const fullRef = useRef(null);
   const halfRef = useRef(null);
@@ -21,6 +21,10 @@ export default function App() {
     halfRef.current.handleHalfKatakana(e.target.value);
   };
 
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
   return (
     <Container maxW="650px">
       <Box boxShadow="md" pt={10} rounded="md" mt={10} mb={10}>
@@ -30,7 +34,8 @@ export default function App() {
             size="lg"
             fontSize="2xl"
             width="auto"
-            // ref={inputRef}
+            autoFocus={true}
+            ref={inputRef}
             value={input}
             onChange={changeToKana}
           />
