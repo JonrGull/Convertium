@@ -10,21 +10,19 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
     credentials,
   });
 
-  const projectId = "convertium-367307";
+  const projectId = credentials.project_id;
   const location = "global";
 
-  async function translateText() {
-    const request = {
-      parent: `projects/${projectId}/locations/${location}`,
-      contents: [req.body.text],
-      mimeType: "text/plain",
-      sourceLanguageCode: "en",
-      targetLanguageCode: "ja",
-    };
+  const request = {
+    parent: `projects/${projectId}/locations/${location}`,
+    contents: [req.body.text],
+    mimeType: "text/plain",
+    sourceLanguageCode: "en",
+    targetLanguageCode: "ja",
+  };
 
-    const [response] = await translationClient.translateText(request);
+  const [response] = await translationClient.translateText(request);
+  const translation = response.translations[0].translatedText;
 
-    res.json(response.translations[0].translatedText);
-  }
-  translateText();
+  res.json(translation);
 };
