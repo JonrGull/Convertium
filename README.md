@@ -10,7 +10,7 @@
 
 ### Features
 
-- Convert your foreign name to Japanese Hiragana, Katakana, and half-width katakana.
+- Convert your foreign name to Japanese Hiragana, Katakana, and half-width Katakana.
 - Convert any Hiragana, Katakana, or half-width Katakana word to other styles.
 - Don't know any Japanese? No problem! You can paste in any English word and it will be converted to Japanese after hitting the button.
 
